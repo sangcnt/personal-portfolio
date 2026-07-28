@@ -13,10 +13,10 @@
     <string>--bind</string>
     <string>127.0.0.1</string>
     <string>--directory</string>
-    <string>/Users/sangcnt/_Projects/portfolio/sangcnt-online/dist</string>
+    <string>/Users/sangcnt/_Projects/portfolio/sang-portfolio/dist</string>
   </array>
   <key>WorkingDirectory</key>
-  <string>/Users/sangcnt/_Projects/portfolio/sangcnt-online</string>
+  <string>/Users/sangcnt/_Projects/portfolio/sang-portfolio</string>
   <key>RunAtLoad</key>
   <true/>
   <key>KeepAlive</key>
