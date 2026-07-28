@@ -277,6 +277,13 @@ summary {
   background-size: 72px 54px;
   mask-image: linear-gradient(to top, black 8%, transparent 82%);
   opacity: 0.95;
+  animation: hero-grid-drift 18s linear infinite;
+}
+
+@keyframes hero-grid-drift {
+  to {
+    background-position: 0 54px;
+  }
 }
 
 .hero-glow {
@@ -294,16 +301,17 @@ summary {
 .particles {
   position: absolute;
   inset: 0;
-  opacity: 0.62;
-  background-image:
-    radial-gradient(circle at 8% 28%, var(--fg-muted) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 17% 54%, var(--accent) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 27% 19%, var(--fg-muted) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 40% 40%, var(--fg-muted) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 58% 21%, var(--accent) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 71% 48%, var(--fg-muted) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 83% 24%, var(--fg-muted) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 93% 58%, var(--accent) 0 1px, transparent 1.5px);
+  width: 100%;
+  height: 100%;
+  opacity: 0.76;
+  mask-image: radial-gradient(ellipse 92% 86% at 50% 42%, black 24%, transparent 100%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid {
+    animation: none;
+  }
 }
 
 .hero-content {

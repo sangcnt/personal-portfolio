@@ -150,8 +150,8 @@ const faqs = [
         </a>
 
         <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#about" data-section="about">About</a>
           <a href="#work" data-section="work">Work</a>
+          <a href="#about" data-section="about">About</a>
           <a href="#contact" data-section="contact">Contact</a>
         </nav>
 
@@ -171,7 +171,7 @@ const faqs = [
       <section class="hero" id="top">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-glow" aria-hidden="true"></div>
-        <div class="particles" aria-hidden="true"></div>
+        <canvas class="particles" aria-hidden="true"></canvas>
 
         <div class="hero-content">
           <p class="hero-eyebrow">Senior Full-Stack Engineer</p>
@@ -200,75 +200,6 @@ const faqs = [
       </section>
 
       <div class="page-surface">
-        <aside class="upwork-section" aria-label="Upwork track record">
-          <div class="upwork-proof">
-            <div class="upwork-logo" aria-hidden="true">up</div>
-            <div>
-              <small>Independent track record</small>
-              <strong>58 jobs. 100% Job Success. Top Rated.</strong>
-            </div>
-            <a href={upworkUrl} target="_blank" rel="noreferrer">View Upwork profile <span>↗</span></a>
-          </div>
-        </aside>
-
-        <section class="site-section about-section" id="about" aria-labelledby="about-title">
-          <div class="section-header">
-            <h2 id="about-title">About</h2>
-            <span aria-hidden="true"></span>
-          </div>
-
-          <div class="about-grid">
-            <aside class="about-aside">
-              <h3>What I do</h3>
-              <ul>
-                <li>Turn complex requirements into clear, buildable systems.</li>
-                <li>Move comfortably from backend architecture to product interface.</li>
-                <li>Add AI where it creates real leverage, not theatre.</li>
-              </ul>
-            </aside>
-
-            <div class="bio-card">
-              <div class="bio-avatar" aria-hidden="true">S</div>
-              <p class="bio-lead">
-                I’m Sang. Over 10+ years in software engineering, I’ve built and maintained web
-                products across backend, frontend, cloud infrastructure, and applied AI — usually
-                where product complexity and technical ownership meet.
-              </p>
-              <p class="bio-copy">
-                I own engineering end to end — from requirements and system design to backend,
-                frontend, deployment, and production support. I’ve been doing this long enough to
-                move quickly through ambiguity and focus on what creates value.
-              </p>
-              <p class="bio-copy">
-                My core background is in PHP and Laravel platforms, modern React applications,
-                Python services, AWS infrastructure, and the practical integration of language
-                models into real products.
-              </p>
-              <p class="bio-closing">
-                When the path is unclear, I make it concrete. That’s usually why I’m hired.
-              </p>
-              <div class="bio-signoff">
-                <span><b>Sang</b>Senior Full-Stack Engineer</span>
-                <span>Ho Chi Minh City<br />Vietnam</span>
-              </div>
-            </div>
-
-            <aside class="about-aside about-aside-right">
-              <div class="about-stack">
-                <h3>Core stack</h3>
-                <dl>
-                  {stack.map((group) => (
-                    <div>
-                      <dt>{group.label}</dt>
-                      <dd>{group.tools.join(" · ")}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </aside>
-          </div>
-        </section>
-
         <section class="site-section work-section" id="work" aria-labelledby="work-title">
           <div class="section-header">
             <h2 id="work-title">Selected work</h2>
@@ -359,6 +290,75 @@ const faqs = [
           </div>
         </section>
 
+        <section class="site-section about-section" id="about" aria-labelledby="about-title">
+          <div class="section-header">
+            <h2 id="about-title">About</h2>
+            <span aria-hidden="true"></span>
+          </div>
+
+          <div class="about-grid">
+            <aside class="about-aside">
+              <h3>What I do</h3>
+              <ul>
+                <li>Turn complex requirements into clear, buildable systems.</li>
+                <li>Move comfortably from backend architecture to product interface.</li>
+                <li>Add AI where it creates real leverage, not theatre.</li>
+              </ul>
+            </aside>
+
+            <div class="bio-card">
+              <div class="bio-avatar" aria-hidden="true">S</div>
+              <p class="bio-lead">
+                I’m Sang. Over 10+ years in software engineering, I’ve built and maintained web
+                products across backend, frontend, cloud infrastructure, and applied AI — usually
+                where product complexity and technical ownership meet.
+              </p>
+              <p class="bio-copy">
+                I own engineering end to end — from requirements and system design to backend,
+                frontend, deployment, and production support. I’ve been doing this long enough to
+                move quickly through ambiguity and focus on what creates value.
+              </p>
+              <p class="bio-copy">
+                My core background is in PHP and Laravel platforms, modern React applications,
+                Python services, AWS infrastructure, and the practical integration of language
+                models into real products.
+              </p>
+              <p class="bio-closing">
+                When the path is unclear, I make it concrete. That’s usually why I’m hired.
+              </p>
+              <div class="bio-signoff">
+                <span><b>Sang</b>Senior Full-Stack Engineer</span>
+                <span>Ho Chi Minh City<br />Vietnam</span>
+              </div>
+            </div>
+
+            <aside class="about-aside about-aside-right">
+              <div class="about-stack">
+                <h3>Core stack</h3>
+                <dl>
+                  {stack.map((group) => (
+                    <div>
+                      <dt>{group.label}</dt>
+                      <dd>{group.tools.join(" · ")}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <aside class="upwork-section" aria-label="Upwork track record">
+          <div class="upwork-proof">
+            <div class="upwork-logo" aria-hidden="true">up</div>
+            <div>
+              <small>Independent track record</small>
+              <strong>58 jobs. 100% Job Success. Top Rated.</strong>
+            </div>
+            <a href={upworkUrl} target="_blank" rel="noreferrer">View Upwork profile <span>↗</span></a>
+          </div>
+        </aside>
+
         <section class="site-section faq-section" id="faq" aria-labelledby="faq-title">
           <div class="section-header">
             <h2 id="faq-title">Good to know</h2>
@@ -417,6 +417,146 @@ const faqs = [
         element.textContent = currentDomain;
       });
 
+      const hero = document.querySelector(".hero");
+      const particleCanvas = document.querySelector(".particles");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let drawParticleField = () => {};
+
+      if (hero && particleCanvas instanceof HTMLCanvasElement) {
+        const context = particleCanvas.getContext("2d");
+
+        if (context) {
+          let fieldWidth = 0;
+          let fieldHeight = 0;
+          let particles = [];
+          let frame = 0;
+          let lastTime = 0;
+          let isVisible = true;
+          let pointerX = 0;
+          let pointerY = 0;
+          let targetPointerX = 0;
+          let targetPointerY = 0;
+
+          const randomBetween = (min, max) => min + Math.random() * (max - min);
+
+          const seedParticles = () => {
+            const count = Math.min(105, Math.max(48, Math.round((fieldWidth * fieldHeight) / 10000)));
+            particles = Array.from({ length: count }, () => ({
+              x: randomBetween(0, fieldWidth),
+              y: randomBetween(0, fieldHeight),
+              radius: Math.random() < 0.84 ? randomBetween(0.45, 1.15) : randomBetween(1.2, 2),
+              alpha: randomBetween(0.22, 0.78),
+              phase: randomBetween(0, Math.PI * 2),
+              twinkle: randomBetween(0.00055, 0.0016),
+              velocityX: randomBetween(-0.006, 0.006),
+              velocityY: randomBetween(-0.012, 0.004),
+              depth: randomBetween(0.45, 1.25),
+              accent: Math.random() < 0.24,
+            }));
+          };
+
+          drawParticleField = (time = 0) => {
+            context.clearRect(0, 0, fieldWidth, fieldHeight);
+            context.globalCompositeOperation = root.dataset.theme === "dark" ? "lighter" : "source-over";
+
+            const accent = getComputedStyle(root).getPropertyValue("--accent-rgb").trim();
+            const neutral = root.dataset.theme === "dark" ? "249, 240, 252" : "59, 54, 69";
+            const themeOpacity = root.dataset.theme === "dark" ? 1 : 0.62;
+
+            particles.forEach((particle) => {
+              const x = particle.x + pointerX * particle.depth;
+              const y = particle.y + pointerY * particle.depth;
+              const twinkle = 0.58 + Math.sin(time * particle.twinkle + particle.phase) * 0.42;
+              const centerDistance = Math.hypot(
+                (x - fieldWidth / 2) / (fieldWidth * 0.42),
+                (y - fieldHeight * 0.48) / (fieldHeight * 0.38),
+              );
+              const contentFade = Math.min(1, 0.2 + centerDistance * 0.78);
+
+              context.globalAlpha = particle.alpha * twinkle * contentFade * themeOpacity;
+              context.fillStyle = `rgb(${particle.accent ? accent : neutral})`;
+              context.beginPath();
+              context.arc(x, y, particle.radius, 0, Math.PI * 2);
+              context.fill();
+            });
+
+            context.globalAlpha = 1;
+            context.globalCompositeOperation = "source-over";
+          };
+
+          const resizeParticleField = () => {
+            const bounds = hero.getBoundingClientRect();
+            const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+            fieldWidth = Math.max(1, bounds.width);
+            fieldHeight = Math.max(1, bounds.height);
+            particleCanvas.width = Math.round(fieldWidth * pixelRatio);
+            particleCanvas.height = Math.round(fieldHeight * pixelRatio);
+            context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+            seedParticles();
+            drawParticleField(performance.now());
+          };
+
+          const animateParticleField = (time) => {
+            const delta = Math.min(lastTime ? time - lastTime : 16, 32);
+            lastTime = time;
+            pointerX += (targetPointerX - pointerX) * 0.035;
+            pointerY += (targetPointerY - pointerY) * 0.035;
+
+            particles.forEach((particle) => {
+              particle.x += particle.velocityX * delta * particle.depth;
+              particle.y += particle.velocityY * delta * particle.depth;
+
+              if (particle.x < -12) particle.x = fieldWidth + 12;
+              if (particle.x > fieldWidth + 12) particle.x = -12;
+              if (particle.y < -12) particle.y = fieldHeight + 12;
+              if (particle.y > fieldHeight + 12) particle.y = -12;
+            });
+
+            drawParticleField(time);
+            frame = requestAnimationFrame(animateParticleField);
+          };
+
+          const startParticleField = () => {
+            if (reducedMotion || frame || !isVisible || document.hidden) return;
+            lastTime = 0;
+            frame = requestAnimationFrame(animateParticleField);
+          };
+
+          const stopParticleField = () => {
+            cancelAnimationFrame(frame);
+            frame = 0;
+          };
+
+          if (!reducedMotion) {
+            hero.addEventListener("pointermove", (event) => {
+              const bounds = hero.getBoundingClientRect();
+              targetPointerX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 14;
+              targetPointerY = ((event.clientY - bounds.top) / bounds.height - 0.5) * 10;
+            });
+
+            hero.addEventListener("pointerleave", () => {
+              targetPointerX = 0;
+              targetPointerY = 0;
+            });
+
+            new IntersectionObserver(([entry]) => {
+              isVisible = entry.isIntersecting;
+              if (isVisible) startParticleField();
+              else stopParticleField();
+            }).observe(hero);
+
+            document.addEventListener("visibilitychange", () => {
+              if (document.hidden) stopParticleField();
+              else startParticleField();
+            });
+          }
+
+          new ResizeObserver(resizeParticleField).observe(hero);
+          resizeParticleField();
+          startParticleField();
+        }
+      }
+
       const updateThemeLabel = () => {
         const dark = root.dataset.theme === "dark";
         themeButton?.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
@@ -430,6 +570,7 @@ const faqs = [
         root.dataset.theme = next;
         try { localStorage.setItem("sang-theme-v2", next); } catch {}
         updateThemeLabel();
+        drawParticleField(performance.now());
       });
 
       menuButton?.addEventListener("click", () => {
@@ -444,7 +585,7 @@ const faqs = [
       }));
 
       if ("IntersectionObserver" in window) {
-        const sections = ["about", "work", "contact"]
+        const sections = ["work", "about", "contact"]
           .map((id) => document.getElementById(id))
           .filter(Boolean);
         const observer = new IntersectionObserver((entries) => {
