@@ -1,4 +1,4 @@
-# sangcnt.online
+# Personal Portfolio
 
 Personal portfolio for Sang, a senior full-stack engineer based in Ho Chi Minh City.
 
