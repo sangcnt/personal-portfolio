@@ -150,8 +150,8 @@ const faqs = [
         </a>
 
         <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#work" data-section="work">Work</a>
           <a href="#about" data-section="about">About</a>
+          <a href="#work" data-section="work">Work</a>
           <a href="#contact" data-section="contact">Contact</a>
         </nav>
 
@@ -200,6 +200,73 @@ const faqs = [
       </section>
 
       <div class="page-surface">
+        <section class="site-section about-section" id="about" aria-labelledby="about-title">
+          <div class="section-header">
+            <h2 id="about-title">About</h2>
+            <span aria-hidden="true"></span>
+          </div>
+
+          <div class="about-grid">
+            <aside class="about-aside">
+              <h3>What I do</h3>
+              <ul>
+                <li>Turn complex requirements into clear, buildable systems.</li>
+                <li>Move comfortably from backend architecture to product interface.</li>
+                <li>Add AI where it creates real leverage, not theatre.</li>
+              </ul>
+            </aside>
+
+            <div class="bio-card">
+              <div class="bio-avatar" aria-hidden="true">S</div>
+              <p class="bio-lead">
+                I’m Sang. Over 10+ years in software engineering, I’ve built and maintained web
+                products across backend, frontend, cloud infrastructure, and applied AI — usually
+                where product complexity and technical ownership meet.
+              </p>
+              <p class="bio-copy">
+                I own engineering end to end — from requirements and system design to backend,
+                frontend, deployment, and production support. I’ve been doing this long enough to
+                move quickly through ambiguity and focus on what creates value.
+              </p>
+              <p class="bio-copy">
+                My core background is in PHP and Laravel platforms, modern React applications,
+                Python services, AWS infrastructure, and the practical integration of language
+                models into real products.
+              </p>
+              <p class="bio-closing">
+                When the path is unclear, I make it concrete. That’s usually why I’m hired.
+              </p>
+              <div class="bio-signoff">
+                <span><b>Sang</b>Senior Full-Stack Engineer</span>
+                <span>Ho Chi Minh City<br />Vietnam</span>
+              </div>
+            </div>
+
+            <aside class="about-aside about-aside-right">
+              <div class="about-stack">
+                <h3>Core stack</h3>
+                <dl>
+                  {stack.map((group) => (
+                    <div>
+                      <dt>{group.label}</dt>
+                      <dd>{group.tools.join(" · ")}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </aside>
+          </div>
+
+          <div class="upwork-proof">
+            <div class="upwork-logo" aria-hidden="true">up</div>
+            <div>
+              <small>Independent track record</small>
+              <strong>58 jobs. 100% Job Success. Top Rated.</strong>
+            </div>
+            <a href={upworkUrl} target="_blank" rel="noreferrer">View Upwork profile <span>↗</span></a>
+          </div>
+        </section>
+
         <section class="site-section work-section" id="work" aria-labelledby="work-title">
           <div class="section-header">
             <h2 id="work-title">Selected work</h2>
@@ -290,80 +357,6 @@ const faqs = [
           </div>
         </section>
 
-        <section class="site-section about-section" id="about" aria-labelledby="about-title">
-          <div class="section-header">
-            <h2 id="about-title">About</h2>
-            <span aria-hidden="true"></span>
-          </div>
-
-          <div class="about-grid">
-            <aside class="about-aside">
-              <h3>What I do</h3>
-              <ul>
-                <li>Turn complex requirements into clear, buildable systems.</li>
-                <li>Move comfortably from backend architecture to product interface.</li>
-                <li>Add AI where it creates real leverage, not theatre.</li>
-              </ul>
-
-              <div class="about-stack">
-                <h3>Core stack</h3>
-                <dl>
-                  {stack.map((group) => (
-                    <div>
-                      <dt>{group.label}</dt>
-                      <dd>{group.tools.join(" · ")}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </aside>
-
-            <div class="bio-card">
-              <div class="bio-avatar" aria-hidden="true">S</div>
-              <p class="bio-lead">
-                I’m Sang. Over 10+ years in software engineering, I’ve built and maintained web
-                products across backend, frontend, cloud infrastructure, and applied AI — usually
-                where product complexity and technical ownership meet.
-              </p>
-              <p class="bio-copy">
-                I own engineering end to end — from requirements and system design to backend,
-                frontend, deployment, and production support. I’ve been doing this long enough to
-                move quickly through ambiguity and focus on what creates value.
-              </p>
-              <p class="bio-copy">
-                My core background is in PHP and Laravel platforms, modern React applications,
-                Python services, AWS infrastructure, and the practical integration of language
-                models into real products.
-              </p>
-              <p class="bio-closing">
-                When the path is unclear, I make it concrete. That’s usually why I’m hired.
-              </p>
-              <div class="bio-signoff">
-                <span><b>Sang</b>Senior Full-Stack Engineer</span>
-                <span>Ho Chi Minh City<br />Vietnam</span>
-              </div>
-            </div>
-
-            <aside class="about-aside about-aside-right">
-              <h3>How I work</h3>
-              <ul>
-                <li>Own outcomes end to end, not isolated tickets.</li>
-                <li>Keep progress, risks, and trade-offs visible.</li>
-                <li>Design inside real constraints and ship in useful increments.</li>
-              </ul>
-            </aside>
-          </div>
-
-          <div class="upwork-proof">
-            <div class="upwork-logo" aria-hidden="true">up</div>
-            <div>
-              <small>Independent track record</small>
-              <strong>58 jobs. 100% Job Success. Top Rated.</strong>
-            </div>
-            <a href={upworkUrl} target="_blank" rel="noreferrer">View Upwork profile <span>↗</span></a>
-          </div>
-        </section>
-
         <section class="site-section faq-section" id="faq" aria-labelledby="faq-title">
           <div class="section-header">
             <h2 id="faq-title">Good to know</h2>
@@ -449,7 +442,7 @@ const faqs = [
       }));
 
       if ("IntersectionObserver" in window) {
-        const sections = ["work", "about", "contact"]
+        const sections = ["about", "work", "contact"]
           .map((id) => document.getElementById(id))
           .filter(Boolean);
         const observer = new IntersectionObserver((entries) => {
