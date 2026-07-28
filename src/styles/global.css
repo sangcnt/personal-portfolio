@@ -264,26 +264,41 @@ summary {
 }
 
 .hero-grid {
+  --hero-grid-column: 96px;
+  --hero-grid-row: 62px;
   position: absolute;
-  bottom: -31%;
+  top: 48%;
   left: 50%;
-  width: min(1600px, 150vw);
-  height: 70%;
-  transform: translateX(-50%) perspective(520px) rotateX(58deg);
-  transform-origin: center bottom;
+  width: min(2200px, 190vw);
+  height: 92%;
+  transform: translateX(-50%) perspective(440px) rotateX(64deg);
+  transform-origin: center top;
   background-image:
-    linear-gradient(to right, var(--border) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
-  background-size: 72px 54px;
-  mask-image: linear-gradient(to top, black 8%, transparent 82%);
-  opacity: 0.95;
-  animation: hero-grid-drift 18s linear infinite;
+    linear-gradient(to right, var(--border-strong) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-strong) 1px, transparent 1px);
+  background-position: center 0;
+  background-size: var(--hero-grid-column) var(--hero-grid-row);
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 9%, #000 72%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, #000 9%, #000 72%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  mask-composite: intersect;
+  opacity: 0.78;
+  will-change: background-position;
+  animation: hero-grid-travel 3.8s linear infinite;
 }
 
-@keyframes hero-grid-drift {
+@keyframes hero-grid-travel {
   to {
-    background-position: 0 54px;
+    background-position: center var(--hero-grid-row);
   }
+}
+
+:root:not([data-theme="dark"]) .hero-grid {
+  opacity: 0.58;
 }
 
 .hero-glow {
@@ -1419,6 +1434,15 @@ footer > div > a:last-child {
   .hero {
     min-height: 720px;
     padding-inline: 20px;
+  }
+
+  .hero-grid {
+    --hero-grid-column: 78px;
+    --hero-grid-row: 54px;
+    top: 52%;
+    width: 250vw;
+    height: 78%;
+    animation-duration: 4.2s;
   }
 
   .hero h1 {
