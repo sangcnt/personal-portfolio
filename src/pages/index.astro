@@ -74,7 +74,7 @@ const faqs = [
 ---
 
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -82,7 +82,7 @@ const faqs = [
       name="description"
       content="Sang is a senior full-stack engineer with 10+ years of experience building reliable web applications and practical AI-powered features."
     />
-    <meta name="theme-color" content="#fdfdfe" />
+    <meta name="theme-color" content="#16141d" />
     <link rel="canonical" href="https://sangcnt.online/" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta property="og:type" content="website" />
@@ -102,8 +102,8 @@ const faqs = [
     <meta name="twitter:image" content="https://sangcnt.online/og-v2.png" />
     <script is:inline>
       try {
-        const savedTheme = localStorage.getItem("sang-theme");
-        document.documentElement.dataset.theme = savedTheme === "dark" ? "dark" : "light";
+        const savedTheme = localStorage.getItem("sang-theme-v2");
+        document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
       } catch {}
     </script>
     <script
@@ -146,7 +146,7 @@ const faqs = [
       <div class="nav-pill">
         <a class="wordmark" href="#top" aria-label="Sang, home">
           <span class="wordmark-mark" aria-hidden="true">S</span>
-          <span class="wordmark-text">sang<span>.dev</span></span>
+          <span class="wordmark-text domain-name">sangcnt.online</span>
         </a>
 
         <nav class="nav-links" aria-label="Primary navigation">
@@ -309,17 +309,23 @@ const faqs = [
 
             <div class="bio-card">
               <div class="bio-avatar" aria-hidden="true">S</div>
-              <p>
+              <p class="bio-lead">
                 I’m Sang. Over 10+ years in software engineering, I’ve built and maintained web
-                products across backend, frontend, cloud infrastructure, and now applied AI.
+                products across backend, frontend, cloud infrastructure, and applied AI — usually
+                where product complexity and technical ownership meet.
               </p>
-              <p>
-                I work best where product complexity, technical ownership, and reliable execution
-                meet. I care about sensible architecture, direct communication, and software that
-                still makes sense after the first release.
+              <p class="bio-copy">
+                I own engineering end to end — from requirements and system design to backend,
+                frontend, deployment, and production support. I’ve been doing this long enough to
+                move quickly through ambiguity and focus on what creates value.
               </p>
-              <p class="bio-emphasis">
-                When the path is unclear, I make it concrete and keep the work moving.
+              <p class="bio-copy">
+                My core background is in PHP and Laravel platforms, modern React applications,
+                Python services, AWS infrastructure, and the practical integration of language
+                models into real products.
+              </p>
+              <p class="bio-closing">
+                When the path is unclear, I make it concrete. That’s usually why I’m hired.
               </p>
               <div class="bio-signoff">
                 <span><b>Sang</b>Senior Full-Stack Engineer</span>
@@ -405,7 +411,7 @@ const faqs = [
       <div>
         <a class="wordmark footer-wordmark" href="#top">
           <span class="wordmark-mark" aria-hidden="true">S</span>
-          <span class="wordmark-text">sang<span>.dev</span></span>
+          <span class="wordmark-text domain-name">sangcnt.online</span>
         </a>
         <p>© {new Date().getFullYear()} Sang. Senior Full-Stack Engineer.</p>
         <a href="#top">Back to top ↑</a>
@@ -418,6 +424,11 @@ const faqs = [
       const menuButton = document.querySelector(".menu-toggle");
       const nav = document.querySelector(".nav-pill");
       const navLinks = [...document.querySelectorAll(".nav-links a")];
+      const currentDomain = window.location.hostname.replace(/^www\./, "") || "sangcnt.online";
+
+      document.querySelectorAll(".domain-name").forEach((element) => {
+        element.textContent = currentDomain;
+      });
 
       const updateThemeLabel = () => {
         const dark = root.dataset.theme === "dark";
@@ -430,7 +441,7 @@ const faqs = [
       themeButton?.addEventListener("click", () => {
         const next = root.dataset.theme === "dark" ? "light" : "dark";
         root.dataset.theme = next;
-        try { localStorage.setItem("sang-theme", next); } catch {}
+        try { localStorage.setItem("sang-theme-v2", next); } catch {}
         updateThemeLabel();
       });
 
