@@ -16,6 +16,8 @@
   --accent: #65a83e;
   --accent-soft: #d8fec4;
   --accent-rgb: 101, 168, 62;
+  --hero-glow-rgb: 116, 95, 128;
+  --hero-glow-opacity: 0.2;
   --shadow: 0 1px 2px rgb(43 50 88 / 0.04), 0 18px 48px rgb(43 50 88 / 0.06);
   --grid-width: 1120px;
   --grid-padding: 32px;
@@ -35,6 +37,8 @@
   --accent: #8cd55b;
   --accent-soft: #28320d;
   --accent-rgb: 140, 213, 91;
+  --hero-glow-rgb: 246, 228, 252;
+  --hero-glow-opacity: 0.72;
   --shadow: 0 2px 1px rgb(0 0 0 / 0.14), 0 28px 52px rgb(0 0 0 / 0.2);
   color-scheme: dark;
 }
@@ -303,14 +307,27 @@ summary {
 
 .hero-glow {
   position: absolute;
-  top: 32%;
+  top: 41%;
   left: 50%;
-  width: 720px;
-  height: 420px;
+  width: min(1180px, 108vw);
+  height: 560px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgb(var(--accent-rgb) / 0.11), transparent 68%);
-  filter: blur(18px);
+  background:
+    radial-gradient(
+      ellipse 48% 46% at 50% 47%,
+      rgb(var(--hero-glow-rgb) / 0.28) 0%,
+      rgb(var(--hero-glow-rgb) / 0.11) 38%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 72% 34% at 50% 69%,
+      rgb(var(--accent-rgb) / 0.1) 0%,
+      transparent 70%
+    );
+  filter: blur(28px);
+  opacity: var(--hero-glow-opacity);
+  pointer-events: none;
 }
 
 .particles {
