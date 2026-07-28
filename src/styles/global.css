@@ -988,6 +988,44 @@ summary {
   line-height: 1.72;
 }
 
+.about-stack {
+  margin-top: 58px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+}
+
+.about-aside .about-stack h3 {
+  margin-bottom: 26px;
+}
+
+.about-stack dl {
+  display: grid;
+  gap: 22px;
+  margin: 0;
+}
+
+.about-stack dl > div {
+  display: grid;
+  gap: 7px;
+}
+
+.about-stack dt {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-stack dd {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 13px;
+  font-weight: 430;
+  line-height: 1.65;
+}
+
 .bio-card {
   grid-column: span 6;
   padding: 0;
@@ -1013,10 +1051,10 @@ summary {
 .bio-card .bio-lead {
   margin: 0 0 42px;
   color: var(--fg);
-  font-size: clamp(25px, 2.35vw, 32px);
+  font-size: clamp(22px, 1.85vw, 27px);
   font-weight: 470;
   letter-spacing: -0.027em;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 .bio-card .bio-copy,
@@ -1110,56 +1148,6 @@ summary {
 .upwork-proof a span {
   margin-left: 8px;
   color: var(--accent);
-}
-
-.stack-section {
-  border-top: 1px solid var(--border);
-}
-
-.stack-list {
-  width: min(var(--grid-width), calc(100% - var(--grid-padding) * 2));
-  margin: 64px auto 0;
-  border-top: 1px solid var(--border);
-}
-
-.stack-row {
-  display: grid;
-  grid-template-columns: 64px minmax(160px, 0.65fr) 1.35fr;
-  gap: 32px;
-  align-items: center;
-  min-height: 112px;
-  border-bottom: 1px solid var(--border);
-}
-
-.stack-index {
-  color: var(--fg-muted);
-  font-family: var(--mono);
-  font-size: 10px;
-}
-
-.stack-row h3 {
-  margin: 0;
-  color: var(--fg-strong);
-  font-size: 20px;
-}
-
-.stack-row ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-end;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.stack-row li {
-  padding: 7px 11px;
-  border: 1px solid var(--border);
-  border-radius: 99px;
-  background: var(--bg-raised);
-  color: var(--fg-muted);
-  font-size: 12px;
 }
 
 .faq-section {
@@ -1509,7 +1497,7 @@ footer > div > a:last-child {
   }
 
   .bio-card .bio-lead {
-    font-size: 24px;
+    font-size: 21px;
   }
 
   .bio-card .bio-copy,
@@ -1527,17 +1515,6 @@ footer > div > a:last-child {
     grid-column: 1 / -1;
     padding-top: 16px;
     border-top: 1px solid var(--border);
-  }
-
-  .stack-row {
-    grid-template-columns: 32px 1fr;
-    gap: 12px;
-    padding: 26px 0;
-  }
-
-  .stack-row ul {
-    grid-column: 2;
-    justify-content: flex-start;
   }
 
   .faq-list summary {

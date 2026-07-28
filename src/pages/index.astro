@@ -152,7 +152,6 @@ const faqs = [
         <nav class="nav-links" aria-label="Primary navigation">
           <a href="#work" data-section="work">Work</a>
           <a href="#about" data-section="about">About</a>
-          <a href="#stack" data-section="stack">Stack</a>
           <a href="#contact" data-section="contact">Contact</a>
         </nav>
 
@@ -305,6 +304,18 @@ const faqs = [
                 <li>Move comfortably from backend architecture to product interface.</li>
                 <li>Add AI where it creates real leverage, not theatre.</li>
               </ul>
+
+              <div class="about-stack">
+                <h3>Core stack</h3>
+                <dl>
+                  {stack.map((group) => (
+                    <div>
+                      <dt>{group.label}</dt>
+                      <dd>{group.tools.join(" · ")}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </aside>
 
             <div class="bio-card">
@@ -350,25 +361,6 @@ const faqs = [
               <strong>58 jobs. 100% Job Success. Top Rated.</strong>
             </div>
             <a href={upworkUrl} target="_blank" rel="noreferrer">View Upwork profile <span>↗</span></a>
-          </div>
-        </section>
-
-        <section class="site-section stack-section" id="stack" aria-labelledby="stack-title">
-          <div class="section-header">
-            <h2 id="stack-title">Core stack</h2>
-            <span aria-hidden="true"></span>
-          </div>
-
-          <div class="stack-list">
-            {stack.map((group, index) => (
-              <article class="stack-row">
-                <span class="stack-index">0{index + 1}</span>
-                <h3>{group.label}</h3>
-                <ul>
-                  {group.tools.map((tool) => <li>{tool}</li>)}
-                </ul>
-              </article>
-            ))}
           </div>
         </section>
 
@@ -457,7 +449,7 @@ const faqs = [
       }));
 
       if ("IntersectionObserver" in window) {
-        const sections = ["work", "about", "stack", "contact"]
+        const sections = ["work", "about", "contact"]
           .map((id) => document.getElementById(id))
           .filter(Boolean);
         const observer = new IntersectionObserver((entries) => {
