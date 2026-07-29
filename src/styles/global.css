@@ -362,9 +362,9 @@ summary {
 
 .hero-avatar {
   display: grid;
-  flex: 0 0 56px;
-  width: 56px;
-  height: 56px;
+  flex: 0 0 66px;
+  width: 66px;
+  height: 66px;
   overflow: hidden;
   place-items: center;
   border: 1px solid var(--border-strong);
@@ -388,14 +388,13 @@ summary {
 
 .hero-profile-copy {
   display: grid;
-  height: 56px;
-  grid-template-rows: 1fr 1fr;
+  height: 66px;
+  grid-template-rows: repeat(3, 1fr);
   align-items: center;
   text-align: left;
 }
 
 .hero-eyebrow {
-  align-self: end;
   margin: 0;
   color: var(--fg);
   font-size: 14px;
@@ -405,7 +404,6 @@ summary {
 
 .hero-track-record {
   display: flex;
-  align-self: start;
   align-items: center;
   gap: 7px;
   margin: 0;
@@ -419,6 +417,14 @@ summary {
 .hero-track-record i {
   color: var(--border-strong);
   font-style: normal;
+}
+
+.hero-upwork-rank {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 10px;
+  font-weight: 520;
+  line-height: 1.45;
 }
 
 .hero h1 {
@@ -1514,22 +1520,23 @@ footer > div > a:last-child {
   }
 
   .hero-avatar {
-    flex-basis: 52px;
-    width: 52px;
-    height: 52px;
+    flex-basis: 60px;
+    width: 60px;
+    height: 60px;
     border-radius: 14px;
     font-size: 20px;
   }
 
   .hero-profile-copy {
-    height: 52px;
+    height: 60px;
   }
 
   .hero-eyebrow {
     font-size: 13px;
   }
 
-  .hero-track-record {
+  .hero-track-record,
+  .hero-upwork-rank {
     gap: 4px;
     font-size: 8.5px;
   }
