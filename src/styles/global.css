@@ -365,6 +365,7 @@ summary {
   flex: 0 0 56px;
   width: 56px;
   height: 56px;
+  overflow: hidden;
   place-items: center;
   border: 1px solid var(--border-strong);
   border-radius: 15px;
@@ -375,6 +376,14 @@ summary {
   font-size: 22px;
   font-weight: 750;
   box-shadow: 0 12px 30px rgb(0 0 0 / 0.12);
+}
+
+.hero-avatar img,
+.bio-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-profile-copy {
@@ -1092,6 +1101,7 @@ summary {
   width: 120px;
   height: 120px;
   margin-bottom: 66px;
+  overflow: hidden;
   place-items: center;
   border: 1px solid var(--border-strong);
   border-radius: 30px;
